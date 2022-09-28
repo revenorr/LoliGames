@@ -1510,7 +1510,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.556
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1692,6 +1692,81 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[6]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[13]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[35]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[41]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[43]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[45]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[47]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[51]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[53]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[56]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[57]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: af9bf029f5141b14daeb24cbe470dfb0, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 988db7cd2703bec4ca7e608d46fbf306,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 988db7cd2703bec4ca7e608d46fbf306, type: 3}
@@ -15951,7 +16026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7621715635897545251
 GameObject:
   m_ObjectHideFlags: 0

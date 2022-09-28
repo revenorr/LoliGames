@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Thry.AnimationParser;
-using static UnityEngine.UI.CanvasScaler;
+
 
 [RequireComponent(typeof(SphereCollider))]
 

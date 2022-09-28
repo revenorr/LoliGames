@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using static Cinemachine.CinemachineImpulseManager.ImpulseEvent;
-using System;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -43,6 +39,7 @@ public class PlayerController : MonoBehaviour
         TryGetComponent(out animator);
         saveSpeed = Speed;
         sh = FindObjectOfType<Shooting>();
+        GlobalEventManager.OnLvlUP += LvLUpOption;
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -151,6 +148,13 @@ public class PlayerController : MonoBehaviour
     {
         Speed = saveSpeed;
         //slow = false;
+    }
+
+    public void LvLUpOption()
+    {
+        Speed += 1;
+        saveSpeed += 1;
+        Debug.Log("Улучшение");
     }
 
 }

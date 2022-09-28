@@ -12,7 +12,10 @@ public class Score : MonoBehaviour
     public ProgressBar myBar; // Your pb variable
     public TextMeshProUGUI lvl;
     private int currentLvl = 0;
-    
+    private void Start()
+    {
+        
+    }
 
     public void LateUpdate()
     {
@@ -23,6 +26,7 @@ public class Score : MonoBehaviour
     public void LvLUP()
     {        
          currentLvl += 1;
+         GlobalEventManager.LvlUpAction();
     }
     
     public void KillEnemy()
