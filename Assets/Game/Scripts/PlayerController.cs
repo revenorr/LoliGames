@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     public float RotationSpeed = 300;
     public float Gravity = 20;
     //public float ShootDeley = 0.1f;
-    private float saveSpeed;
+    public float saveSpeed;
     private bool slow = false;
-    public float slowSpeed = 2;
+    [HideInInspector] public float slowSpeed = 2;
 
     public float health;
     public int numOfHearts;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         TryGetComponent(out animator);
         saveSpeed = Speed;
         sh = FindObjectOfType<Shooting>();
-        GlobalEventManager.OnLvlUP += LvLUpOption;
+        
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -139,9 +139,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Slow()
     {
-        Speed /= slowSpeed;
-        
-        Debug.Log("Slow");
+        Speed /= slowSpeed;       
     }
 
     private void Normal()
@@ -150,11 +148,6 @@ public class PlayerController : MonoBehaviour
         //slow = false;
     }
 
-    public void LvLUpOption()
-    {
-        Speed += 1;
-        saveSpeed += 1;
-        Debug.Log("Улучшение");
-    }
+    
 
 }

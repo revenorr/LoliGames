@@ -7,12 +7,15 @@ public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
     public float bulletLifeTime;
-    public int damage =1;
+    public int damage = 1;
+    private LvlUp LvlUp;
     //public LayerMask whatIsSolid;
     
 
     private void Awake()
     {
+        LvlUp = FindObjectOfType<LvlUp>();
+        damage = LvlUp.bulletDamage;
         Destroy(this.gameObject, bulletLifeTime);
     }
     void OnCollisionEnter(Collision collision)
