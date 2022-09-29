@@ -12,11 +12,13 @@ public class Spawner : MonoBehaviour
     private int randPosition;
     public float startTimeBtwSpawns;
     private float timeBtwSpawn;
+
     
 
     // Start is called before the first frame update
     void Start()
     {
+        GlobalEventManager.OnEnemyUP += EnemySpawnUP;
         timeBtwSpawn = startTimeBtwSpawns;
     }
 
@@ -36,6 +38,13 @@ public class Spawner : MonoBehaviour
         else
             timeBtwSpawn -= Time.deltaTime;
     }
+    public void EnemySpawnUP()
+    {
+        startTimeBtwSpawns -= 0.2f;
+    }
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnEnemyUP -= EnemySpawnUP;
+    }
 
-   
 }

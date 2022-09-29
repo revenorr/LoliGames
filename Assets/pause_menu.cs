@@ -13,6 +13,7 @@ public class pause_menu : MonoBehaviour
     static bool _START;
     static float Sound_Volume;
     public Slider slider;
+    public GameObject Cheats;
 
     private void Start()
     {
@@ -58,5 +59,13 @@ public class pause_menu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+    public void CheatsOn()
+    {
+        Cheats.gameObject.SetActive(true);
+    }
+    public void CheatsOff()
+    {
+        Cheats.gameObject.SetActive(false);
     }
 }

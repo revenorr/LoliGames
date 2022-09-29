@@ -6,14 +6,17 @@ using TMPro;
 public class Enemy : MonoBehaviour
 {
     public int health;
+    public int maxHealth;
     private Score sm;
     public GameObject DropEXP;
-    
+    private enemyUP enemyUP;
     public TextMeshPro HealthText;
 
-    private void Start()
+    private void Awake()
     {
+        GlobalEventManager.OnEnemyUP += EnemyHealsUP;
         sm = FindObjectOfType<Score>();
+        health = maxHealth;
     }
     public void TakeDamage(int damage)
     {
@@ -33,5 +36,14 @@ public class Enemy : MonoBehaviour
            
             
     }
+    public void EnemyHealsUP()
+    {
+        maxHealth += 20;
+    }
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnEnemyUP -= EnemyHealsUP;
+    }
+
 
 }

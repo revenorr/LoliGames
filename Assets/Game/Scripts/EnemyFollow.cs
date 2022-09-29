@@ -23,6 +23,13 @@ public class EnemyFollow : MonoBehaviour
 
     private const float EPSILON = 0.1f;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        GlobalEventManager.OnEnemyUP += EnemySpeedUP;
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.speed = speed;
+
+    }
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -66,6 +73,7 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist < _distanseToPlayer)
         {
@@ -75,5 +83,13 @@ public class EnemyFollow : MonoBehaviour
         
         //transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
     }
-    
+    public void EnemySpeedUP()
+    {
+        speed += 1;
+    }
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnEnemyUP -= EnemySpeedUP;
+    }
+
 }
