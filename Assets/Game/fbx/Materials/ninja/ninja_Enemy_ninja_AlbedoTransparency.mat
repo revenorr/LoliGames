@@ -7,9 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material_Base_color
+  m_Name: ninja_Enemy_ninja_AlbedoTransparency
   m_Shader: {fileID: 4800000, guid: 917b37092bae034459c28c00a3a19b54, type: 3}
-  m_ShaderKeywords: VIGNETTE_CLASSIC VIGNETTE_MASKED _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ShaderKeywords: COLOR_GRADING_HDR VIGNETTE_CLASSIC VIGNETTE_MASKED _EMISSION
+    _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BRDFMetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 20e218fe05e63404db25d15a4632a793, type: 3}
+        m_Texture: {fileID: 2800000, guid: 218b6fd3e92c9f440bb23de1d963591f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BRDFMetallicMap:
@@ -152,7 +153,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 53a4360eff5f0a94eb62b66d92bd7a93, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8208dd25cb436ab4ba8461bae02b2c08, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap1:
@@ -200,7 +201,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LightingAOTex:
-        m_Texture: {fileID: 2800000, guid: d84144ed0bc57a245ab74ebba773f920, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LightingDetailShadows:
@@ -220,7 +221,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b5404f73d2ef87f40bf199a0b8468ddb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 713a2d76493ea764a952b1af4f49fba4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
@@ -491,7 +492,7 @@ Material:
     - _AudioLinkTextureVisualization: 0
     - _BRDFAnisotropy: 0
     - _BRDFForceFallback: 0
-    - _BRDFGlossiness: 0
+    - _BRDFGlossiness: 1
     - _BRDFInvertGlossiness: 0
     - _BRDFMetallic: 1
     - _BRDFMetallicGlossMapToolTip: 0
@@ -530,7 +531,7 @@ Material:
     - _ClippingMaskUV: 0
     - _ColorMask: 15
     - _ContinuousDissolve: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DebugCameraData: 0
     - _DebugEnabled: 0
@@ -652,7 +653,7 @@ Material:
     - _EmissionCenterOutSpeed1: 5
     - _EmissionHueShift: 0
     - _EmissionHueShift1: 0
-    - _EmissionHueShiftEnabled: 1
+    - _EmissionHueShiftEnabled: 0
     - _EmissionHueShiftEnabled1: 0
     - _EmissionHueShiftSpeed: 0
     - _EmissionHueShiftSpeed1: 0
@@ -667,7 +668,7 @@ Material:
     - _EmissionScrollingUseCurve1: 0
     - _EmissionScrollingVertexColor: 0
     - _EmissionScrollingVertexColor1: 0
-    - _EmissionStrength: 2.56
+    - _EmissionStrength: 2.8
     - _EmissionStrength1: 0
     - _EmissiveBlink_Max: 1
     - _EmissiveBlink_Max1: 1
@@ -786,7 +787,7 @@ Material:
     - _LightingDetailShadowsUV: 0
     - _LightingDetailStrength: 1
     - _LightingDirectColorMode: 0
-    - _LightingEnableAO: 1
+    - _LightingEnableAO: 0
     - _LightingEnableHSL: 0
     - _LightingGradientEnd: 0.5
     - _LightingGradientStart: 0
@@ -795,7 +796,7 @@ Material:
     - _LightingIndirectColorMode: 0
     - _LightingMinLightBrightness: 0
     - _LightingMinShadowBrightnessRatio: 0
-    - _LightingMode: 0
+    - _LightingMode: 1
     - _LightingMonochromatic: 0
     - _LightingOnlyUnityShadows: 0
     - _LightingRampType: 0
@@ -807,20 +808,20 @@ Material:
     - _LightingUncapped: 0
     - _LightingWrappedNormalization: 0
     - _LightingWrappedWrap: 0
-    - _LineWidth: 3.41
+    - _LineWidth: 2.24
     - _LockTooltip: 0
     - _MainAlphaToCoverage: 0
-    - _MainBrightness: 0
+    - _MainBrightness: 0.04
     - _MainColorAdjustTextureUV: 0
     - _MainDistanceFadeMax: 0
     - _MainDistanceFadeMin: 0
     - _MainEmissionStrength: 0
     - _MainFadeTextureUV: 0
     - _MainFadeType: 1
-    - _MainHueShift: 0
-    - _MainHueShiftReplace: 1
+    - _MainHueShift: 0.275
+    - _MainHueShiftReplace: 0
     - _MainHueShiftSpeed: 0
-    - _MainHueShiftToggle: 0
+    - _MainHueShiftToggle: 1
     - _MainMaxAlpha: 1
     - _MainMinAlpha: 0
     - _MainMipScale: 0.25
@@ -872,7 +873,7 @@ Material:
     - _OutlineEmission: 0
     - _OutlineFixedSize: 0
     - _OutlineHueOffset: 0
-    - _OutlineHueOffsetSpeed: 0
+    - _OutlineHueOffsetSpeed: 2
     - _OutlineHueShift: 0
     - _OutlineLit: 1
     - _OutlineMaskUV: 0
@@ -890,7 +891,7 @@ Material:
     - _OutlineStencilZFailOp: 0
     - _OutlineTextureUV: 0
     - _OutlineTintMix: 0
-    - _OutlineUseVertexColors: 2
+    - _OutlineUseVertexColors: 1
     - _OutlinesMaxDistance: 9999
     - _PPEmissionMultiplier: 1
     - _PPHelp: 0
@@ -967,7 +968,7 @@ Material:
     - _SSSThicknessMapUV: 0
     - _SSSThicknessMod: 0
     - _SampleWorld: 0
-    - _Saturation: 0
+    - _Saturation: -1
     - _ScrollingEmission: 0
     - _ScrollingEmission1: 0
     - _ShadeColor_Step: 0
@@ -1061,7 +1062,7 @@ Material:
     - _VertexUnwrap: 0
     - _ZTest: 4
     - _ZWrite: 1
-    - _commentIfZero_EnableOutlinePass: 0
+    - _commentIfZero_EnableOutlinePass: 1
     - _glitterFrequencyLinearEmissive: 20
     - footer_discord: 0
     - footer_github: 0
@@ -1182,7 +1183,7 @@ Material:
     - m_lightingOptions: 1
     - m_mainOptions: 1
     - m_outlineOptions: 1
-    - m_renderingOptions: 0
+    - m_renderingOptions: 1
     - m_start_Alpha: 0
     - m_start_BlackLight: 0
     - m_start_Blur: 0
@@ -1211,7 +1212,7 @@ Material:
     - m_start_Hologram: 0
     - m_start_Iridescence: 0
     - m_start_Lighting: 1
-    - m_start_MainHueShift: 0
+    - m_start_MainHueShift: 1
     - m_start_MainVertexColors: 0
     - m_start_Matcap2: 0
     - m_start_Metallic: 0
@@ -1264,7 +1265,7 @@ Material:
     - m_start_glitterRandom: 0
     - m_start_glowInDarkEmissionOptions: 0
     - m_start_glowInDarkEmissionOptions1: 0
-    - m_start_lightingAdvanced: 1
+    - m_start_lightingAdvanced: 0
     - m_start_lightingHSL: 0
     - m_start_lightingModifiers: 0
     - m_start_manualFlipbookControl: 0
@@ -1272,7 +1273,7 @@ Material:
     - m_start_matcap2HueShift: 0
     - m_start_matcapHueShift: 0
     - m_start_mirrorOptions: 0
-    - m_start_outlineAdvanced: 0
+    - m_start_outlineAdvanced: 1
     - m_start_panosphereOptions: 0
     - m_start_parallaxAdvanced: 0
     - m_start_parallaxHeightmap: 0
@@ -1412,7 +1413,7 @@ Material:
     - _LightingDetailShadowsPan: {r: 0, g: 0, b: 0, a: 0}
     - _LightingShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightingShadowMaskPan: {r: 0, g: 0, b: 0, a: 0}
-    - _LineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LineColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
     - _MainColorAdjustTexturePan: {r: 0, g: 0, b: 0, a: 0}
     - _MainFadeTexturePan: {r: 0, g: 0, b: 0, a: 0}
     - _MainTexPan: {r: 0, g: 0, b: 0, a: 0}

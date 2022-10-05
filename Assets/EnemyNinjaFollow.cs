@@ -4,16 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public class EnemyFollow : MonoBehaviour
+public class EnemyNinjaFollow : MonoBehaviour
 {
     public float speed;
-    public GameObject die;
     private NavMeshAgent _agent;
     public int damage;
-    public GameObject TakeDamageSound;
     public Animator animator;
     private bool onTrigerEnter = false;
-
 
     [SerializeField] PlayerController _player;
 
@@ -31,7 +28,7 @@ public class EnemyFollow : MonoBehaviour
     }
     void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
+        _agent = GetComponent<NavMeshAgent>();     
     }
 
     void OnTriggerEnter(Collider collider)
@@ -41,13 +38,10 @@ public class EnemyFollow : MonoBehaviour
         PlayerController playerTakeDamage = col.GetComponent<PlayerController>();
 
 
-        if (playerTakeDamage != null )
+        if (playerTakeDamage != null)
         {
-            playerTakeDamage.health -= damage;
-            GameObject effect = Instantiate(die, transform.position, Quaternion.identity);
-            Destroy(effect, 5f);
-            Instantiate(TakeDamageSound, transform.position, Quaternion.identity);
-            animator.SetTrigger("Damage");
+            //animator.SetTrigger("Attack");
+            animator.SetBool("Attack1",true);
             onTrigerEnter = true;
             StartCoroutine(timeEffect(1f));
         }
@@ -57,7 +51,9 @@ public class EnemyFollow : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         onTrigerEnter = false;
+        animator.SetBool("Attack1", false);
     }
+
 
     private bool IsNavMeshMoving
     {
@@ -69,15 +65,14 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         float dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist < _distanseToPlayer && onTrigerEnter == false)
         {
             Vector3 playerPos = _player.transform.position;
             _agent.SetDestination(playerPos);
         }
-        
-        //transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
     }
     public void EnemySpeedUP()
     {
