@@ -12,11 +12,15 @@ public class Shooting : MonoBehaviour
     public bool speedSlow;
     
     public Transform firePoint;
+    public Transform firePointFlyGan1;
+    public Transform firePointFlyGan2;
+    public int flyGunOn = 0;
     public GameObject bulletPrefab;
     public float RateOfFire = 0.5f;
     private float _rateOfFire;
     public float bulletForce = 20f;
     public Animator animator;
+    public Animator animatorFlyGun;
     public AudioSource shootSound;
     public AudioClip impact;
     public AudioSource reloadSoundOut;
@@ -34,6 +38,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         animator = animator.GetComponent<Animator>();
+        animatorFlyGun = animatorFlyGun.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,13 +52,16 @@ public class Shooting : MonoBehaviour
         {
             _rateOfFire = 0;
             Shoot();
+            FlyGanShoot();
             animator.SetBool("Fire 0", true);
+            animatorFlyGun.SetBool("Fire", true);
             speedSlow = true;
         }
         else if (Input.GetButtonUp("Fire1"))
         {
             speedSlow = false;
             animator.SetBool("Fire 0", false);
+            animatorFlyGun.SetBool("Fire", false);
         }
         ammoCount.text ="Ammo: " + currentAmmo + " / " + allAmmo;
         
@@ -85,6 +93,7 @@ public class Shooting : MonoBehaviour
         reloadUI.SetActive(true);
         animator.SetBool("Fire 0", false);
         animator.SetBool("Reload", true);
+        animatorFlyGun.SetBool("Fire", false);
     }
     public void Reload()
     {
@@ -94,5 +103,25 @@ public class Shooting : MonoBehaviour
         animator.SetBool("Reload", false);
 
         
+    }
+    void FlyGanShoot()
+    {
+        if (flyGunOn >= 1)
+        {
+            GameObject bullet1 = Instantiate(bulletPrefab, firePointFlyGan1.position, firePointFlyGan1.rotation);
+            Rigidbody rb1 = bullet1.GetComponent<Rigidbody>();
+            rb1.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            
+            if (flyGunOn > 1)
+            {
+                GameObject bullet2 = Instantiate(bulletPrefab, firePointFlyGan2.position, firePointFlyGan2.rotation);
+                Rigidbody rb2 = bullet2.GetComponent<Rigidbody>();
+                rb2.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            }
+
+        }
+        
+
+       
     }
 }

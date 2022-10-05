@@ -24,6 +24,7 @@ public class LvlUp : MonoBehaviour
     private bool CausticBombisSpawn = false;
     public int CurrentCausticDamage = 5;
     public int UPCausticDamage = 5;
+    public GameObject FlyGunObj;
 
     // Start is called before the first frame update
     void Start()
@@ -56,9 +57,9 @@ public class LvlUp : MonoBehaviour
                 TakeList[i] = randomNumber;
        
                 var newbutton = Instantiate(S_Object[(TakeList[i] - 1)], G_Object[i].transform.position, G_Object[i].transform.rotation, Canvas3);
-                Destroy(newbutton,0.2f);
+                Destroy(newbutton,0.1f);
 
-        }
+            }
         
     }
     public void Resume()
@@ -131,9 +132,18 @@ public class LvlUp : MonoBehaviour
         _bomb = FindObjectOfType<Bomb>();
         _bomb.startCausticBomb();
         Debug.Log("Токсичная бомба");
+        Resume();
         if (CausticBombisSpawn == true) CurrentCausticDamage+= UPCausticDamage;
         else CausticBombisSpawn = true;
+        
+    }
+    public void FlyGun()
+    {
+        FlyGunObj.SetActive(true);
+        sh = FindObjectOfType<Shooting>();
+        sh.flyGunOn += 1;
         Resume();
+
     }
 
 }

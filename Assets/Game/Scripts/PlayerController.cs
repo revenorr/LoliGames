@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 ReghtHendRotationOffset = new Vector3(0, 0, -90);
     public Transform LeftHandTarget;
+    public LayerMask LayerMask;
     
 
 
