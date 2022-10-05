@@ -2,13 +2,16 @@
 
 public class causticDamage : MonoBehaviour
 {
-    public int damage;
+    private int damage;
     private bool inDamage=false;
     public float TickSpeed=1f;
     [SerializeField]private float SphereRadius;
-    private void Start()
+    private LvlUp lvlUp;
+    private void Awake()
     {
         SphereRadius = gameObject.GetComponent<SphereCollider>().radius;
+        lvlUp = FindObjectOfType<LvlUp>();
+        damage = lvlUp.CurrentCausticDamage;
     }
 
 

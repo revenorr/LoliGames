@@ -11,16 +11,20 @@ public class LvlUp : MonoBehaviour
     public GameObject[] S_Object;
     public RectTransform Canvas3;
     public GameObject Canvas3obj;
-    //public GameObject bullet;
     public List<int> TakeList = new List<int>();
     private Shooting sh;
     private PlayerController playerController;
-    //public Bullet bullet;
+    private Bomb _bomb;
     private turelSpawn turelSpawn;
     private int randomNumber;
     public static bool GameIsPaused = false;
     public bool TurelSpawnBool = false;
     public int bulletDamage = 10;
+    public int UPbulletDamage = 5;  
+    private bool CausticBombisSpawn = false;
+    public int CurrentCausticDamage = 5;
+    public int UPCausticDamage = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +100,7 @@ public class LvlUp : MonoBehaviour
     {
         //bullet = GetComponent<Bullet>();
         //bullet = FindObjectOfType<Bullet>();
-        bulletDamage += 5;
+        bulletDamage += UPbulletDamage;
         Debug.Log("Увеличение урона стрельбы");
         Resume();
     }
@@ -120,6 +124,15 @@ public class LvlUp : MonoBehaviour
         sh = FindObjectOfType<Shooting>();
         sh.reloadTime -= sh.reloadTime * 10 / 100;
         Debug.Log("Уменьшение перезарядки");
+        Resume();
+    }
+    public void CausticBomb()
+    {
+        _bomb = FindObjectOfType<Bomb>();
+        _bomb.startCausticBomb();
+        Debug.Log("Токсичная бомба");
+        if (CausticBombisSpawn == true) CurrentCausticDamage+= UPCausticDamage;
+        else CausticBombisSpawn = true;
         Resume();
     }
 
