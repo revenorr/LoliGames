@@ -5,11 +5,11 @@ using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 
-public class Turret : MonoBehaviour
+public class MissileTurel : MonoBehaviour
 {
     public GameObject animator1;
-    [SerializeField] private TurretBullet bulletPrefab; // префаб снаряда, если его нет, то будет выбран режим стрельбы "лучом"
-    public float fireRate = 1; // скорострельность
+    [SerializeField] private missile bulletPrefab; // префаб снаряда, если его нет, то будет выбран режим стрельбы "лучом"
+    public float fireRate; // скорострельность
     [SerializeField] private float smooth = 1; // сглаживание движения башни
     [SerializeField] private float rayOffset = 1; // делаем поисковый луч, немного больше области поиска
     [SerializeField] private int damage = 10; // повреждение (при стрельбе "лучом")
@@ -27,7 +27,7 @@ public class Turret : MonoBehaviour
     private Transform target;
     private Vector3 offset;
     private int index;
-    private float curFireRate;
+    [SerializeField] private float curFireRate;
     private Quaternion defaultRot = Quaternion.identity;
     private Animator animator;
 
@@ -148,11 +148,11 @@ public class Turret : MonoBehaviour
 
             if (bulletPrefab != null)
             {
-                TurretBullet bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity) as TurretBullet;
+                missile bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity) as missile;
                 bullet.SetBullet(layerMask, point.forward);
                 shootSound.PlayOneShot(impact, 0.7f);
                 //animator.SetBool("shoot", true);
-                
+
 
 
             }
@@ -166,7 +166,7 @@ public class Turret : MonoBehaviour
 
     void Choice()
     {
-        curFireRate = fireRate;
+        //curFireRate = fireRate;
 
         target = FindTarget();
         //animator.SetBool("shoot", false);

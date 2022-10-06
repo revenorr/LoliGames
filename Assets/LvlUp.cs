@@ -16,6 +16,7 @@ public class LvlUp : MonoBehaviour
     private PlayerController playerController;
     private Bomb _bomb;
     private turelSpawn turelSpawn;
+    private Turret Turret;
     private int randomNumber;
     public static bool GameIsPaused = false;
     public bool TurelSpawnBool = false;
@@ -25,6 +26,8 @@ public class LvlUp : MonoBehaviour
     public int CurrentCausticDamage = 5;
     public int UPCausticDamage = 5;
     public GameObject FlyGunObj;
+    public int bulletDamageTurel;
+    public int bulletDamageTurelUP;
 
     // Start is called before the first frame update
     void Start()
@@ -109,10 +112,21 @@ public class LvlUp : MonoBehaviour
     {
         TurelSpawnBool = true;
         turelSpawn = FindObjectOfType<turelSpawn>();       
-        if (turelSpawn.turelIsSpawn == true) turelSpawn.timeToResp -= turelSpawn.timeToResp * 10 / 100;
+        if (turelSpawn.turelIsSpawn == true) turelSpawn.timeToResp -= turelSpawn.timeToResp * 30 / 100;
         Debug.Log("Получение турели");
         Resume();
     }
+
+    public void TurelDamage()
+    {
+        Turret = FindObjectOfType<Turret>();
+        Turret.fireRate -= Turret.fireRate * 20 / 100;
+        bulletDamageTurel += bulletDamageTurelUP;
+        Debug.Log("Увеличение урона турели");
+        Resume();
+
+    }
+
     public void AmmoUP()
     {
         sh = FindObjectOfType<Shooting>();
@@ -141,6 +155,7 @@ public class LvlUp : MonoBehaviour
     {
         FlyGunObj.SetActive(true);
         sh = FindObjectOfType<Shooting>();
+        bulletDamage += bulletDamage*5/100;
         sh.flyGunOn += 1;
         Resume();
 

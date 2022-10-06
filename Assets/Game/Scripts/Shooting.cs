@@ -32,6 +32,7 @@ public class Shooting : MonoBehaviour
     private bool onReload = false;
     public GameObject reloadUI;
 
+
     [SerializeField]
     private TextMeshProUGUI ammoCount;
 
@@ -54,14 +55,16 @@ public class Shooting : MonoBehaviour
             Shoot();
             FlyGanShoot();
             animator.SetBool("Fire 0", true);
-            animatorFlyGun.SetBool("Fire", true);
+            if (flyGunOn >= 1)
+                animatorFlyGun.SetBool("Fire", true);
             speedSlow = true;
         }
         else if (Input.GetButtonUp("Fire1"))
         {
             speedSlow = false;
             animator.SetBool("Fire 0", false);
-            animatorFlyGun.SetBool("Fire", false);
+            if (flyGunOn >= 1)
+                animatorFlyGun.SetBool("Fire", false);
         }
         ammoCount.text ="Ammo: " + currentAmmo + " / " + allAmmo;
         
@@ -93,7 +96,7 @@ public class Shooting : MonoBehaviour
         reloadUI.SetActive(true);
         animator.SetBool("Fire 0", false);
         animator.SetBool("Reload", true);
-        animatorFlyGun.SetBool("Fire", false);
+        if (flyGunOn >= 1) animatorFlyGun.SetBool("Fire", false);
     }
     public void Reload()
     {

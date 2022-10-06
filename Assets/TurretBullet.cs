@@ -13,8 +13,12 @@ public class TurretBullet : MonoBehaviour
     private LayerMask layer;
     public GameObject hitEffect;
     public float bulletLifeTime;
+    private LvlUp LvlUp;
+
     private void Awake()
     {
+        LvlUp = FindObjectOfType<LvlUp>();
+        damage = LvlUp.bulletDamageTurel;
         Destroy(this.gameObject, bulletLifeTime);
     }
     public void SetBullet(LayerMask layerMask, Vector3 direction)

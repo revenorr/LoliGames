@@ -1,8 +1,56 @@
 fileFormatVersion: 2
-guid: 70e48b1037ca44b4e8e4482ae2df7209
+guid: ea93933c4bce84b4cbffaeefe9c58fcd
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -6811536725543054781
+    second: copter.001|copter.001Action
+  - first:
+      74: 7197779013067552606
+    second: copter.001|copter.002Action
+  - first:
+      74: 7030941276225029794
+    second: copter.001|copter.003Action
+  - first:
+      74: 7185793622171471791
+    second: copter.001|copter.004Action
+  - first:
+      74: 2693465412579275679
+    second: copter.002|copter.001Action
+  - first:
+      74: -1497020906874307161
+    second: copter.002|copter.002Action
+  - first:
+      74: -8690984112954088934
+    second: copter.002|copter.003Action
+  - first:
+      74: -4215415828715970496
+    second: copter.002|copter.004Action
+  - first:
+      74: 3975541865447979967
+    second: copter.003|copter.001Action
+  - first:
+      74: -4857240907813461107
+    second: copter.003|copter.002Action
+  - first:
+      74: 5420304598917099635
+    second: copter.003|copter.003Action
+  - first:
+      74: -1864449005288735910
+    second: copter.003|copter.004Action
+  - first:
+      74: 660955928888963207
+    second: copter.004|copter.001Action
+  - first:
+      74: -7442478560004714618
+    second: copter.004|copter.002Action
+  - first:
+      74: 6978883782916549967
+    second: copter.004|copter.003Action
+  - first:
+      74: -1485472645672922453
+    second: copter.004|copter.004Action
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -34,7 +82,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 2.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -61,10 +109,10 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 180
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 1
+    normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
@@ -81,7 +129,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 0.024999999
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

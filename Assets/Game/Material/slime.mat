@@ -8,10 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: slime
-  m_Shader: {fileID: 4800000, guid: 297615d530dcac641a612b7e6e189bea, type: 3}
+  m_Shader: {fileID: 4800000, guid: 917b37092bae034459c28c00a3a19b54, type: 3}
   m_ShaderKeywords: LOD_FADE_CROSSFADE POI_LIGHT_DATA_ADDITIVE_DIRECTIONAL_ENABLE
-    POI_LIGHT_DATA_ADDITIVE_ENABLE POI_VERTEXLIGHT_ON VIGNETTE_MASKED _LIGHTINGMODE_SHADEMAP
-    _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+    POI_LIGHT_DATA_ADDITIVE_ENABLE POI_VERTEXLIGHT_ON VIGNETTE_MASKED _EMISSION _GLOSSYREFLECTIONS_OFF
+    _LIGHTINGMODE_SHADEMAP _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -222,7 +222,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d9a56847a2c45f54581e1dd72886dd2f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap1:
@@ -1098,14 +1098,14 @@ Material:
     - _EmissionMapUV: 0
     - _EmissionMask1UV: 0
     - _EmissionMaskUV: 0
-    - _EmissionReplace: 0
+    - _EmissionReplace: 1
     - _EmissionScrollingOffset: 0
     - _EmissionScrollingOffset1: 0
     - _EmissionScrollingUseCurve: 0
     - _EmissionScrollingUseCurve1: 0
     - _EmissionScrollingVertexColor: 0
     - _EmissionScrollingVertexColor1: 0
-    - _EmissionStrength: 0
+    - _EmissionStrength: 0.93
     - _EmissionStrength1: 0
     - _EmissionUV: 0
     - _EmissiveBlink_Max: 1
@@ -1130,7 +1130,7 @@ Material:
     - _EnableDissolveAudioLink: 0
     - _EnableDistortion: 0
     - _EnableDistortionAudioLink: 0
-    - _EnableEmission: 0
+    - _EnableEmission: 1
     - _EnableEmission1: 0
     - _EnableEmission1CenterOutAudioLink: 0
     - _EnableEmission1StrengthAudioLink: 0
@@ -1149,10 +1149,10 @@ Material:
     - _EnableOutlines: 0
     - _EnablePathing: 0
     - _EnableRandom: 0
-    - _EnableRimLighting: 0
+    - _EnableRimLighting: 1
     - _EnableSSS: 0
     - _EnableScifiSpawnIn: 0
-    - _EnableSpecular: 0
+    - _EnableSpecular: 1
     - _EnableSpecular1: 0
     - _EnableTouchGlow: 0
     - _EnableVertexGlitch: 0
@@ -1574,14 +1574,14 @@ Material:
     - _RimHueShiftEnabled: 0
     - _RimHueShiftSpeed: 0
     - _RimIntensity: 3.41
-    - _RimLightColorBias: 1
+    - _RimLightColorBias: 0.613
     - _RimLightNormal: 1
     - _RimLightingInvert: 0
     - _RimMaskUV: 0
-    - _RimSharpness: 0.25
+    - _RimSharpness: 0.09
     - _RimStrength: 0
     - _RimTexUV: 0
-    - _RimWidth: 0.8
+    - _RimWidth: 1
     - _RimWidthNoiseStrength: 0.1
     - _RimWidthNoiseTextureUV: 0
     - _Roughness: 0
@@ -1619,7 +1619,7 @@ Material:
     - _SkyDistort: 5
     - _SkyWeight: 0
     - _Smoothness: 0
-    - _SmoothnessFrom: 1
+    - _SmoothnessFrom: 0
     - _SmoothnessFrom1: 1
     - _SmoothnessMaskUV: 0
     - _SmoothnessTextureChannel: 0
@@ -1662,7 +1662,7 @@ Material:
     - _SpecularMaskUV: 0
     - _SpecularMaxBrightness: 0
     - _SpecularMaxBrightness1: 0
-    - _SpecularMetallic: 0
+    - _SpecularMetallic: 1
     - _SpecularMetallic1: 0
     - _SpecularMetallicMap1UV: 0
     - _SpecularMetallicMapUV: 0
@@ -1678,7 +1678,7 @@ Material:
     - _SpecularToonEnd1: 1
     - _SpecularToonStart: 0.95
     - _SpecularToonStart1: 0.95
-    - _SpecularType: 1
+    - _SpecularType: 2
     - _SpecularType1: 1
     - _Speed: 4.04
     - _SqueezeDist: 0
@@ -1994,7 +1994,7 @@ Material:
     - m_start_Refraction: 0
     - m_start_RimAudioLink: 0
     - m_start_ScifiSpawnIn: 1
-    - m_start_ShadowMix: 0
+    - m_start_ShadowMix: 1
     - m_start_Spawns: 0
     - m_start_SpecularToon: 0
     - m_start_SpecularToon1: 0
@@ -2032,7 +2032,7 @@ Material:
     - m_start_distanceFade: 0
     - m_start_distortionFlow: 0
     - m_start_emission1Options: 0
-    - m_start_emissionOptions: 0
+    - m_start_emissionOptions: 1
     - m_start_flipBook: 0
     - m_start_flipbookHueShift: 0
     - m_start_furAdvanced: 1
@@ -2064,12 +2064,12 @@ Material:
     - m_start_ralivOriface: 0
     - m_start_ralivPenetrator: 0
     - m_start_reflectionRim: 0
-    - m_start_rimHueShift: 0
-    - m_start_rimLightOptions: 0
-    - m_start_rimWidthNoise: 0
+    - m_start_rimHueShift: 1
+    - m_start_rimLightOptions: 1
+    - m_start_rimWidthNoise: 1
     - m_start_scrollingEmissionOptions: 0
     - m_start_scrollingEmissionOptions1: 0
-    - m_start_specular: 0
+    - m_start_specular: 1
     - m_start_specular1: 0
     - m_start_stylizedSpec: 0
     - m_start_subsurface: 0
@@ -2207,7 +2207,7 @@ Material:
     - _Emission: {r: 0.12778208, g: 0.41509426, b: 0.048949763, a: 0}
     - _EmissionCenterOutAddAudioLink: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionCenterOutAddAudioLink1: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 1, g: 0, b: 0.04498005, a: 1}
     - _EmissionColor1: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionMap1Pan: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionMapPan: {r: 0, g: 0, b: 0, a: 0}
@@ -2327,7 +2327,7 @@ Material:
     - _RgbNormalRPan: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 0, g: 0, b: 0, a: 0}
     - _RimEnviroMaskPan: {r: 0, g: 0, b: 0, a: 0}
-    - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimLightColor: {r: 0.7028302, g: 1, b: 0.93202555, a: 1}
     - _RimMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _RimTexPan: {r: 0, g: 0, b: 0, a: 0}
     - _RimTexPanSpeed: {r: 0, g: 0, b: 0, a: 0}
@@ -2352,9 +2352,9 @@ Material:
     - _SpecularMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularMetallicMap1Pan: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularMetallicMapPan: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularTint: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
     - _SpecularTint1: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularToonInnerOuter: {r: 0.25, g: 0.3, b: 0, a: 1}
+    - _SpecularToonInnerOuter: {r: 0.3114754, g: 0.36147532, b: 0, a: 1}
     - _SpecularToonInnerOuter1: {r: 0.25, g: 0.3, b: 0, a: 1}
     - _SssColorBleedAoWeights: {r: 0.4, g: 0.15, b: 0.13, a: 0}
     - _SssTransmissionAbsorption: {r: -8, g: -40, b: -64, a: 0}
