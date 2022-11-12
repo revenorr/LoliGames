@@ -550,7 +550,6 @@ MonoBehaviour:
   damage: 1
   TakeDamageSound: {fileID: 7665240045009971885, guid: df40003b371d6834a96414365258917e,
     type: 3}
-  TakeDamageScreen: {fileID: 0}
   animator: {fileID: 0}
   _player: {fileID: 0}
   _distanseToPlayer: 100
@@ -586,6 +585,7 @@ MonoBehaviour:
   maxHealth: 20
   DropEXP: {fileID: 0}
   HealthText: {fileID: 6447294749206662535}
+  EnemyPrefab: {fileID: 3518529086838434263}
 --- !u!136 &3518529086838434256
 CapsuleCollider:
   m_ObjectHideFlags: 0

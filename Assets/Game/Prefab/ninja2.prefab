@@ -771,7 +771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -66.3, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.4000244, y: 1.91}
+  m_AnchoredPosition: {x: 0.323, y: 1.91}
   m_SizeDelta: {x: 20.05, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &410774168633670753
@@ -1532,6 +1532,7 @@ MonoBehaviour:
   maxHealth: 50
   DropEXP: {fileID: 0}
   HealthText: {fileID: 5082872841660637871}
+  healthUP: 30
 --- !u!1 &7347321054841016170
 GameObject:
   m_ObjectHideFlags: 0

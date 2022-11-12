@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
         moveDirection.y -= Time.deltaTime * Gravity;
 
-        if (Physics.Raycast(Camera.allCameras[0].ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+        if (Physics.Raycast(Camera.allCameras[0].ScreenPointToRay(Input.mousePosition), out RaycastHit hit, LayerMask))
         {
             Vector3 diff = hit.point - transform.position;
             diff.Normalize();

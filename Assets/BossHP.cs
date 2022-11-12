@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Enemy : MonoBehaviour
+public class BossHP : MonoBehaviour
 {
     public int health;
     public int maxHealth;
@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public GameObject DropEXP;
     private enemyUP enemyUP;
     public TextMeshPro HealthText;
-    public int healthUP;
+    public GameObject EnemyPrefab;
     private void Awake()
     {
         GlobalEventManager.OnEnemyUP += EnemyHealsUP;
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             GameObject dropEXP = Instantiate(DropEXP, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Destroy(EnemyPrefab);
             Debug.Log("Враг Убит");
             sm.KillEnemy();
         }
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     }
     public void EnemyHealsUP()
     {
-        maxHealth += healthUP;
+        maxHealth += 20;
     }
     private void OnDestroy()
     {
@@ -47,4 +47,3 @@ public class Enemy : MonoBehaviour
 
 
 }
-

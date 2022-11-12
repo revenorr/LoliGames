@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(SphereCollider))]
-
-public class MissileTurel : MonoBehaviour
+public class BossTurel : MonoBehaviour
 {
-    public GameObject animator1;
-    [SerializeField] private missile bulletPrefab; // префаб снаряда, если его нет, то будет выбран режим стрельбы "лучом"
+    [SerializeField] private BulletEnemy bulletPrefab; // префаб снаряда, если его нет, то будет выбран режим стрельбы "лучом"
     public float fireRate; // скорострельность
     [SerializeField] private float smooth = 1; // сглаживание движения башни
     [SerializeField] private float rayOffset = 1; // делаем поисковый луч, немного больше области поиска
-    [SerializeField] public int damage = 10; // повреждение (при стрельбе "лучом")
+    [SerializeField] private int damage = 10; // повреждение (при стрельбе "лучом")
     [SerializeField] private Transform[] bulletPoint; // точки, откуда ведется стрельба
     [SerializeField] private Transform turretRotation; // объект вращения, башня турели
     [SerializeField] private Transform center; // центр между пушками, для поискового луча
@@ -21,15 +17,14 @@ public class MissileTurel : MonoBehaviour
     public AudioClip impact;
     [Header("Лимиты по осям башни:")]
     [SerializeField] private bool useLimits;
-    [SerializeField][Range(0, 180)] private float limitY = 50;
-    [SerializeField][Range(0, 180)] private float limitX = 30;
+    [SerializeField] [Range(0, 180)] private float limitY = 50;
+    [SerializeField] [Range(0, 180)] private float limitX = 30;
     private SphereCollider turretTrigger;
     private Transform target;
     private Vector3 offset;
     private int index;
     [SerializeField] private float curFireRate;
     private Quaternion defaultRot = Quaternion.identity;
-    private Animator animator;
 
     void Awake()
     {
@@ -39,8 +34,6 @@ public class MissileTurel : MonoBehaviour
         curFireRate = fireRate;
         turretTrigger.enabled = true;
         enabled = false;
-        animator = animator1.GetComponent<Animator>();
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -77,7 +70,7 @@ public class MissileTurel : MonoBehaviour
     Vector3 CalculateNegativeValues(Vector3 eulerAngles)
     {
         eulerAngles.y = (eulerAngles.y > 180) ? eulerAngles.y - 360 : eulerAngles.y;
-        eulerAngles.x = (eulerAngles.x > 180) ? eulerAngles.x - 360 : eulerAngles.x;
+        //eulerAngles.x = (eulerAngles.x > 180) ? eulerAngles.x - 360 : eulerAngles.x;
         eulerAngles.z = (eulerAngles.z > 180) ? eulerAngles.z - 360 : eulerAngles.z;
         return eulerAngles;
     }
@@ -94,9 +87,9 @@ public class MissileTurel : MonoBehaviour
         {
             rotation = CalculateNegativeValues(rotation);
             rotation.y = Mathf.Clamp(rotation.y, -limitY, limitY);
-            rotation.x = Mathf.Clamp(rotation.x, -limitX, limitX);
+            //rotation.x = Mathf.Clamp(rotation.x, -limitX, limitX);
         }
-
+        rotation.x = 0;
         rotation.z = 0;
         turretRotation.eulerAngles = rotation;
 
@@ -148,7 +141,7 @@ public class MissileTurel : MonoBehaviour
 
             if (bulletPrefab != null)
             {
-                missile bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity) as missile;
+                BulletEnemy bullet = Instantiate(bulletPrefab, point.position, Quaternion.identity) as BulletEnemy;
                 bullet.SetBullet(layerMask, point.forward);
                 shootSound.PlayOneShot(impact, 0.7f);
                 //animator.SetBool("shoot", true);

@@ -17,6 +17,7 @@ public class LvlUp : MonoBehaviour
     private Bomb _bomb;
     private turelSpawn turelSpawn;
     private Turret Turret;
+    private MissileTurel missileTurel;
     private int randomNumber;
     public static bool GameIsPaused = false;
     public bool TurelSpawnBool = false;
@@ -26,6 +27,7 @@ public class LvlUp : MonoBehaviour
     public int CurrentCausticDamage = 5;
     public int UPCausticDamage = 5;
     public GameObject FlyGunObj;
+    public GameObject copter;
     public int bulletDamageTurel;
     public int bulletDamageTurelUP;
 
@@ -160,5 +162,12 @@ public class LvlUp : MonoBehaviour
         Resume();
 
     }
+    public void copterMain()
+    {
+        copter.SetActive(true);
+        missileTurel = FindObjectOfType<MissileTurel>();
+        missileTurel.damage += missileTurel.damage * 30 / 100;
+        Resume();
 
+    }
 }
