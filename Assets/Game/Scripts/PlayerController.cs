@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 ReghtHendRotationOffset = new Vector3(0, 0, -90);
     public Transform LeftHandTarget;
     public LayerMask LayerMask;
-    
+
+    public string layerMask;
 
 
 
@@ -95,14 +96,17 @@ public class PlayerController : MonoBehaviour
 
         moveDirection.y -= Time.deltaTime * Gravity;
 
-        if (Physics.Raycast(Camera.allCameras[0].ScreenPointToRay(Input.mousePosition), out RaycastHit hit, LayerMask))
+        if (Physics.Raycast(Camera.allCameras[0].ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
         {
-            Vector3 diff = hit.point - transform.position;
-            diff.Normalize();
+            
+                Vector3 diff = hit.point - transform.position;
+                diff.Normalize();
 
-            float rot = Mathf.Atan2(diff.x, diff.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rot, 0), Time.deltaTime * RotationSpeed);
-            a = transform.InverseTransformDirection(a);
+                float rot = Mathf.Atan2(diff.x, diff.z) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rot, 0), Time.deltaTime * RotationSpeed);
+                a = transform.InverseTransformDirection(a);
+            
+            
         }
         controller.Move(moveDirection * Time.deltaTime);
 

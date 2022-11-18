@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: copter
   m_Shader: {fileID: 4800000, guid: 917b37092bae034459c28c00a3a19b54, type: 3}
-  m_ShaderKeywords: VIGNETTE_MASKED _EMISSION _METALLICGLOSSMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ShaderKeywords: VIGNETTE_CLASSIC VIGNETTE_MASKED _EMISSION _METALLICGLOSSMAP
+    _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -220,7 +221,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a6d6984545cde4a4f9317b17d6dca225, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
@@ -683,7 +684,7 @@ Material:
     - _EmissiveScroll_Width1: 10
     - _EnableAudioLink: 0
     - _EnableAudioLinkDebug: 0
-    - _EnableBRDF: 0
+    - _EnableBRDF: 1
     - _EnableClearCoat: 0
     - _EnableDissolve: 0
     - _EnableDissolveAudioLink: 0
@@ -795,10 +796,10 @@ Material:
     - _LightingIndirectColorMode: 0
     - _LightingMinLightBrightness: 0
     - _LightingMinShadowBrightnessRatio: 0
-    - _LightingMode: 1
+    - _LightingMode: 0
     - _LightingMonochromatic: 0
     - _LightingOnlyUnityShadows: 0
-    - _LightingRampType: 2
+    - _LightingRampType: 0
     - _LightingShadowHue: 0.5
     - _LightingShadowLightness: 0.5
     - _LightingShadowMaskUV: 0
@@ -1348,7 +1349,7 @@ Material:
     - _BumpMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearcoatMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClippingMaskPan: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+    - _Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
     - _DecalColor: {r: 1, g: 1, b: 1, a: 1}
     - _DecalColor1: {r: 1, g: 1, b: 1, a: 1}
     - _DecalColor2: {r: 1, g: 1, b: 1, a: 1}

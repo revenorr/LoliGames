@@ -1528,8 +1528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1418feec98daa0c459d24addf29b427f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  maxHealth: 50
+  health: 60
+  maxHealth: 60
   DropEXP: {fileID: 0}
   HealthText: {fileID: 5082872841660637871}
   healthUP: 30

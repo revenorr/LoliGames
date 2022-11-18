@@ -49,7 +49,7 @@ Transform:
   m_GameObject: {fileID: 938609208615398774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.75, y: 0.39, z: 0.81}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.24, y: 1.24, z: 1.24}
   m_Children:
   - {fileID: 510406128075468522}
   m_Father: {fileID: 0}
@@ -221,15 +221,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 493384, guid: fe91b8cb658b3204d93afd767451f53e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.024446364
       objectReference: {fileID: 0}
     - target: {fileID: 493384, guid: fe91b8cb658b3204d93afd767451f53e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.024446364
       objectReference: {fileID: 0}
     - target: {fileID: 493384, guid: fe91b8cb658b3204d93afd767451f53e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.13975048
       objectReference: {fileID: 0}
     - target: {fileID: 493384, guid: fe91b8cb658b3204d93afd767451f53e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -397,17 +397,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 435106f825e95d44f9a1ec109cd64088,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.049787678
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 435106f825e95d44f9a1ec109cd64088,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.049787678
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 435106f825e95d44f9a1ec109cd64088,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.24272645
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 435106f825e95d44f9a1ec109cd64088,
         type: 3}
@@ -498,7 +498,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5c5428a6fbde9cf44a62152ed82bbc13, type: 2}
+      objectReference: {fileID: 2100000, guid: ff0215ecfb6bda741a24b09e188289d3, type: 2}
     - target: {fileID: -3887185075125053422, guid: 435106f825e95d44f9a1ec109cd64088,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
