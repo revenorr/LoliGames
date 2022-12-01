@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f728e3a4b8a10d94faa4c8fd414cc791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
+  die: {fileID: 1627529993270276878, guid: 1be4d2a54f88b244599b587186bd498c, type: 3}
   damage: 1
   TakeDamageSound: {fileID: 7665240045009971885, guid: df40003b371d6834a96414365258917e,
     type: 3}
