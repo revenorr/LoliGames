@@ -29,8 +29,9 @@ public class PlayerController : MonoBehaviour
     public Vector3 ReghtHendRotationOffset = new Vector3(0, 0, -90);
     public Transform LeftHandTarget;
     public LayerMask LayerMask;
+    public LayerMask LayerMask1;
 
-    public string layerMask;
+    //public string layerMask;
 
 
 
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
         moveDirection.y -= Time.deltaTime * Gravity;
 
-        if (Physics.Raycast(Camera.allCameras[0].ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+        if (Physics.Raycast(Camera.allCameras[0].ScreenPointToRay(Input.mousePosition), out RaycastHit hit, LayerMask1))
         {
             
                 Vector3 diff = hit.point - transform.position;
